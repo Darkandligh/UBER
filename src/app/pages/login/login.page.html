@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar><ion-title>Iniciar sesión</ion-title></ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input label="Email o teléfono" labelPlacement="floating" [(ngModel)]="login"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  @if (error) {
+    <ion-text color="danger"><p>{{ error }}</p></ion-text>
+  }
+  <ion-button expand="block" (click)="submit()">Entrar</ion-button>
+  <ion-button expand="block" fill="clear" routerLink="/register">Crear cuenta</ion-button>
+  <ion-button expand="block" fill="clear" routerLink="/forgot">¿Olvidaste tu contraseña?</ion-button>
+</ion-content>
